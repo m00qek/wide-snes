@@ -26,7 +26,7 @@ jobs:
     - name: Create release notes
       run: make release EXECUTE='' VERSION=${VERSION} REPO=${REPO}
       env:
-        VERSION: ${GITHUB_REF##*/}
+        VERSION: ${{ github.event.release.tag_name }}
         REPO: ${{ github.repository }}
 
     - uses: ncipollo/release-action@v1
