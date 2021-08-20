@@ -3,11 +3,12 @@ name: Releases
 on:
   push:
     tags:
-    - '*'
+    - 'v*'
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    container: "m00qek/snes-game-patcher:latest"
     steps:
     - uses: actions/checkout@v2
 
